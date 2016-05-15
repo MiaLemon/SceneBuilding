@@ -1,0 +1,137 @@
+{
+    "scale": {
+        "x": 2.0,
+        "y": 2.0,
+        "z": 2.0
+    },
+    "tag": "Untagged",
+    "layer": 0,
+    "isStatic": false,
+    "gameObjects": [
+        {
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "tag": "Untagged",
+            "layer": 0,
+            "isStatic": false,
+            "components": [
+                {
+                    "instanceID": -978
+                },
+                {
+                    "instanceID": -6342
+                }
+            ]
+        },
+        {
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 3.5399999618530275
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 2.0
+            },
+            "tag": "Untagged",
+            "layer": 0,
+            "isStatic": false,
+            "components": []
+        },
+        {
+            "position": {
+                "x": -8.039999961853028,
+                "y": 0.0,
+                "z": 3.5399999618530275
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 4.0,
+                "y": 4.0,
+                "z": 2.0
+            },
+            "tag": "Untagged",
+            "layer": 0,
+            "isStatic": false,
+            "components": []
+        },
+        {
+            "position": {
+                "x": 2.2200000286102297,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "tag": "Untagged",
+            "layer": 0,
+            "isStatic": false,
+            "components": []
+        },
+        {
+            "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 2.0,
+                "y": 2.0,
+                "z": 2.0
+            },
+            "tag": "Untagged",
+            "layer": 0,
+            "isStatic": false,
+            "components": []
+        }
+    ],
+    "components": [
+        {
+            "instanceID": -978
+        },
+        {
+            "instanceID": -6342
+        }
+    ]
+}
