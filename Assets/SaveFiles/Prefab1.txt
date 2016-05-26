@@ -23,19 +23,22 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 2.0,
-                "y": 2.0,
-                "z": 2.0
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
             },
             "tag": "Untagged",
             "layer": 0,
             "isStatic": false,
             "components": [
                 {
-                    "instanceID": -978
+                    "instanceID": -972
                 },
                 {
-                    "instanceID": -6342
+                    "instanceID": -974
+                },
+                {
+                    "instanceID": -976
                 }
             ]
         },
@@ -53,14 +56,18 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 4.0,
-                "y": 4.0,
-                "z": 2.0
+                "x": 2.0,
+                "y": 2.0,
+                "z": 1.0
             },
             "tag": "Untagged",
             "layer": 0,
             "isStatic": false,
-            "components": []
+            "components": [
+                {
+                    "instanceID": -978
+                }
+            ]
         },
         {
             "name": "Cube",
@@ -76,14 +83,27 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 4.0,
-                "y": 4.0,
-                "z": 2.0
+                "x": 2.0,
+                "y": 2.0,
+                "z": 1.0
             },
             "tag": "Untagged",
             "layer": 0,
             "isStatic": false,
-            "components": []
+            "components": [
+                {
+                    "instanceID": -982
+                },
+                {
+                    "instanceID": -996
+                },
+                {
+                    "instanceID": -998
+                },
+                {
+                    "instanceID": -1000
+                }
+            ]
         },
         {
             "name": "Parent2",
@@ -99,14 +119,18 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 2.0,
-                "y": 2.0,
-                "z": 2.0
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
             },
             "tag": "Untagged",
             "layer": 0,
             "isStatic": false,
-            "components": []
+            "components": [
+                {
+                    "instanceID": -980
+                }
+            ]
         },
         {
             "name": "Sphere",
@@ -122,22 +146,38 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 2.0,
-                "y": 2.0,
-                "z": 2.0
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
             },
             "tag": "Untagged",
             "layer": 0,
             "isStatic": false,
-            "components": []
+            "components": [
+                {
+                    "instanceID": -984
+                },
+                {
+                    "instanceID": -990
+                },
+                {
+                    "instanceID": -992
+                },
+                {
+                    "instanceID": -994
+                }
+            ]
         }
     ],
     "components": [
         {
-            "instanceID": -978
+            "instanceID": -972
         },
         {
-            "instanceID": -6342
+            "instanceID": -974
+        },
+        {
+            "instanceID": -976
         }
     ]
 }

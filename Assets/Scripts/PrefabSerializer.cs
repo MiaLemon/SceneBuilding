@@ -13,7 +13,7 @@ namespace SceneBuilder
         public bool isStatic;
 
         public List<GameObject> children;
-        public List<MonoBehaviour> components;
+        public List<Component> components;
     }
 
     [System.Serializable]
@@ -27,7 +27,7 @@ namespace SceneBuilder
         public int layer;
         public bool isStatic;
 
-        public List<MonoBehaviour> components;
+        public List<Component> components;
     }
 
     public class PrefabSerializer
@@ -42,7 +42,7 @@ namespace SceneBuilder
             prefabCopy.isStatic = prefabOriginal.isStatic;
 
             prefabCopy.children = TranslateGameObjects(prefabOriginal);
-            prefabCopy.components = TranslateMonoBehaviours(prefabOriginal);
+            prefabCopy.components = TranslateComponents(prefabOriginal);
 
             return JsonUtility.ToJson(prefabCopy, true);
         }
@@ -59,16 +59,20 @@ namespace SceneBuilder
 
                 gameObjectCopy.name = gameObjectOriginal.name;
 
-                //Fix correct local pos/rot/scale
                 gameObjectCopy.position = gameObjectOriginal.transform.position;
                 gameObjectCopy.rotation = gameObjectOriginal.transform.rotation;
-                gameObjectCopy.scale = gameObjectOriginal.transform.lossyScale;
+
+                //compensate for base parents scale
+                Vector3 scale = new Vector3(gameObjectOriginal.transform.lossyScale.x/gameObjectParent.transform.localScale.x,
+                                            gameObjectOriginal.transform.lossyScale.y / gameObjectParent.transform.localScale.y,
+                                            gameObjectOriginal.transform.lossyScale.z / gameObjectParent.transform.localScale.z);
+                gameObjectCopy.scale = scale;
 
                 gameObjectCopy.tag = gameObjectOriginal.tag;
                 gameObjectCopy.layer = gameObjectOriginal.layer;
                 gameObjectCopy.isStatic = gameObjectOriginal.isStatic;
 
-                gameObjectCopy.components = TranslateMonoBehaviours(gameObjectOriginal);
+                gameObjectCopy.components = TranslateComponents(gameObjectOriginal);
 
                 gameObjects.Add(gameObjectCopy);
             }
@@ -76,9 +80,9 @@ namespace SceneBuilder
             return gameObjects;
         }
 
-        private static List<MonoBehaviour> TranslateMonoBehaviours(UnityEngine.GameObject gameObject)
+        private static List<Component> TranslateComponents(UnityEngine.GameObject gameObject)
         {
-            return new List<MonoBehaviour>(gameObject.GetComponents<MonoBehaviour>());
+            return new List<Component>(gameObject.GetComponents<Component>());
         }
 
         public static UnityEngine.GameObject Load(string json)
@@ -100,10 +104,13 @@ namespace SceneBuilder
             return prefabScene;
         }
 
-        static void AddComponents(UnityEngine.GameObject prefabScene, List<MonoBehaviour> components)
+        static void AddComponents(UnityEngine.GameObject prefabScene, List<Component> components)
         {
             for (int i = 0; i < components.Count; i++)
             {
+                //TODO use reflection instead since this can't be used runtime
+
+
                 if (UnityEditorInternal.ComponentUtility.CopyComponent(components[i]))
                 {
                     if (UnityEditorInternal.ComponentUtility.PasteComponentAsNew(prefabScene))
